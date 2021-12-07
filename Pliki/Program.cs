@@ -18,12 +18,17 @@ if (zadanie == 1 | zadanie == 2 |zadanie == 0)
     {
         case 1:
             Console.Clear();
+            //Definicja wzorca wyszukania
             string wzorzec = "Anna?\\s";
+            //Pętla przeszukująca plik
             foreach (string line in System.IO.File.ReadLines(@".\Lista-imion-i-nazwisk.txt"))
             {
+                //Warunek sprawdzający wzorzec (uwzględnia wielkość liter)
                 if (System.Text.RegularExpressions.Regex.IsMatch(line, wzorzec))
                 {
-                    string count = counter.ToString();
+
+                    int count = counter + 1;
+                    //Wyświetlanie linii wraz z numerem
                     Console.WriteLine(count + ". " + line);
                 }
 
